@@ -16,16 +16,16 @@ Configuration of the Create menu::
 Dashboard configuration::
 
     MKADMIN_DASHBOARD = [
-        ('mkweb.mkadmin.AtAGlance', {
+        ('mkadmin.dashboard.AtAGlance', {
             'models': ['blog.Post', 'chet.Album', 'chet.Photo'],
         }),
-        ('mkweb.mkadmin.AllApps', {
+        ('mkadmin.dashboard.AllApps', {
         }),
-        ('mkweb.mkadmin.RecentActions', {
+        ('mkadmin.dashboard.RecentActions', {
         }),
-        ('mkweb.mkadmin.QuickDraft', {
+        ('mkadmin.dashboard.QuickDraft', {
         }),
-        ('mkweb.mkadmin.Feed', {
+        ('mkadmin.dashboard.Feed', {
             'url': 'http://www.feinheit.ch/news/feed/',
         }),
     ]
