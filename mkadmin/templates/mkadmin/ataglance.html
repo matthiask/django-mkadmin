@@ -1,0 +1,20 @@
+{% load i18n %}
+<div class="module widget">
+  <h2>{{ widget.title }}</h2>
+  <p>
+    {% for model in models %}
+      <a href="{{ model.admin_url }}">
+        <strong>
+          {{ model.name }}: {{ model.count }}
+        </strong>
+      </a>
+      {% if not forloop.last %} / {% endif %}
+    {% endfor %}
+  </p>
+  <p>
+  <small>
+    {% trans 'Running on' %}
+    {% for version in versions %}{{ version }}{% if not forloop.last %}, {% endif %}{% endfor %}
+  </small>
+  </p>
+</div>

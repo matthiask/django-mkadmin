@@ -1,0 +1,44 @@
+{% extends "admin/base_site.html" %}
+{% load i18n admin_static mkadmin_tags %}
+
+{% block extrastyle %}{{ block.super }}
+<link rel="stylesheet" type="text/css" href="{% static "admin/css/dashboard.css" %}" />
+<style>
+  .dashboard #content {
+    width: auto;
+  }
+  .dashboard #content-main {
+    -webkit-column-width: 500px;
+    -webkit-column-gap: 10px;
+    -webkit-column-fill: balance;
+
+    -moz-column-width: 500px;
+    -moz-column-gap: 10px;
+    -moz-column-fill: balance;
+
+    column-width: 500px;
+    column-gap: 10px;
+    column-fill: balance;
+  }
+  .dashboard .module {
+    width: 500px;
+    margin: 0 5px 5px 0;
+    display: inline-block;
+  }
+  .dashboard .module .vLargeTextField {
+    width: 458px !important;
+  }
+</style>
+{% endblock %}
+
+{% block coltype %}colM{% endblock %}
+
+{% block bodyclass %}{{ block.super }} dashboard{% endblock %}
+
+{% block breadcrumbs %}{% endblock %}
+
+{% block content %}
+<div id="content-main">
+  {% mkadmin_dashboard %}
+</div>
+{% endblock %}

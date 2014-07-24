@@ -1,0 +1,8 @@
+{% load i18n %}
+<div class="module widget">
+  <h2>{{ widget.title }}</h2>
+  <div id="{{ widget.cache_key }}"></div>
+</div>
+<script>
+  $('#{{ widget.cache_key }}').load('{% url "mkadmin_feed_feed" %}');
+</script>

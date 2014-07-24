@@ -1,0 +1,91 @@
+{% extends "admin/base.html" %}
+
+{% load i18n mkadmin_tags %}
+
+{% block title %}{{ title }} | {{ site_title|default:_('Django site admin') }}{% endblock %}
+
+{% block extrahead %}{{ block.super }}
+<style>
+  #header { height: 39px; overflow: visible; }
+  #branding h1 { display: inline-block; }
+  #branding h1 > a { color: inherit !important; }
+  #branding > ul { display: inline; list-style: none; padding: 0; margin: 0; }
+  #branding > ul > li { display: inline-block; padding: 0; margin: 0; }
+  #branding > ul > li > a { display: inline-block; padding: 8px; margin: 0; }
+
+  #branding li { position: relative; }
+  #branding li ul {
+    display: none;
+    position: absolute;
+    z-index: 99999;
+    top: 25px;
+    left: 7px;
+    background: #417690;
+    border: 1px solid #fff;
+    list-style: none;
+    padding: 10px;
+    margin: 0;
+    min-width: 200px;
+    min-height: 100px; }
+  #branding li:hover ul { display: block; }
+  #branding li strong { display: block; padding: 12px 5px 4px 5px; }
+  #branding li strong:first-child { padding-top: 4px; }
+  #branding li li a { display: block; padding: 4px 5px; font-size: 12px; }
+  #branding li ul a:hover {
+    text-decoration: underline;
+  }
+</style>
+{% endblock %}
+
+
+{% block branding %}
+  <h1>
+    <a href="{% url 'admin:index' %}">
+        {% trans 'Dashboard' %}
+    </a>
+  </h1>
+  {% if user.is_active and user.is_staff %}
+    {% mkadmin_topbar as topbar %}
+    <ul>
+      {% if topbar.create %}
+        <li>
+          <a href="{{ topbar.create.0.add_url }}">{% trans 'Create' %}</a>
+          <ul>
+            {% for model in topbar.create %}
+              <li>
+                <a href="{{ model.add_url }}">{{ model.name }}</a>
+              </li>
+            {% endfor %}
+          </ul>
+        </li>
+      {% endif %}
+      <li>
+        <a href="#">{% trans 'Modules' %}</a>
+        <ul>
+          {% for app in topbar.app_list %}
+            <li><strong>{{ app.name }}</strong></li>
+            {% for model in app.models %}
+              {% if model.perms.change %}
+                <li>
+                  <a href="{{ model.admin_url }}">{{ model.name }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+          {% endfor %}
+        </ul>
+      </li>
+    </ul>
+  {% endif %}
+{% endblock %}
+
+{% block welcome-msg %}
+  {% trans 'Welcome,' %}
+  {% if perms.user.change %}
+    <a href="{% url 'admin:auth_user_change' user.pk %}">
+      <strong>{% firstof user.get_short_name user.get_username %}</strong></a>.
+  {% else %}
+    <strong>{% firstof user.get_short_name user.get_username %}</strong>.
+  {% endif %}
+{% endblock %}
+
+{% block nav-global %}{% endblock %}

@@ -1,0 +1,5 @@
+include LICENSE
+include README.rst
+recursive-include mkadmin/static *.png
+recursive-include mkadmin/static *.css
+recursive-include mkadmin/templates *.html

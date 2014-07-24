@@ -1,0 +1,9 @@
+*.pyc
+*~
+.*.swp
+\#*#
+.DS_Store
+._*
+/dist
+/django_mkadmin.egg-info
+/MANIFEST
