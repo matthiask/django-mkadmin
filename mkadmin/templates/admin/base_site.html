@@ -47,6 +47,9 @@
   {% if user.is_active and user.is_staff %}
     {% mkadmin_topbar as topbar %}
     <ul>
+      <li>
+        <a href="/">{% trans 'View site' %}</a>
+      </li>
       {% if topbar.create %}
         <li>
           <a href="{{ topbar.create.0.add_url }}">{% trans 'Create' %}</a>
