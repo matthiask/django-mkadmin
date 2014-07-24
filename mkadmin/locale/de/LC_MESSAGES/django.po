@@ -1,0 +1,104 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2014-07-24 11:48+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: dashboard.py:63
+msgid "At a glance"
+msgstr "Auf einen Blick"
+
+#: dashboard.py:92
+msgid "Feed"
+msgstr "Feed"
+
+#: dashboard.py:129
+msgid "Recent Actions"
+msgstr "Kürzliche Aktionen"
+
+#: dashboard.py:133
+msgid "All apps"
+msgstr "Alle Apps"
+
+#: dashboard.py:137
+msgid "Quick draft"
+msgstr "Schneller Entwurf"
+
+#: templates/admin/base_site.html:5
+msgid "Django site admin"
+msgstr "Django-Verwaltung"
+
+#: templates/admin/base_site.html:44
+msgid "Dashboard"
+msgstr "Dashboard"
+
+#: templates/admin/base_site.html:52
+msgid "Create"
+msgstr "Erstellen"
+
+#: templates/admin/base_site.html:63
+msgid "Modules"
+msgstr "Module"
+
+#: templates/admin/base_site.html:82
+msgid "Welcome,"
+msgstr "Willkommen,"
+
+#: templates/mkadmin/allapps.html:7
+#, python-format
+msgid "Models in the %(name)s application"
+msgstr ""
+
+#: templates/mkadmin/allapps.html:18
+msgid "Add"
+msgstr ""
+
+#: templates/mkadmin/allapps.html:24
+msgid "Change"
+msgstr ""
+
+#: templates/mkadmin/allapps.html:34
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: templates/mkadmin/ataglance.html:16
+msgid "Running on"
+msgstr "Läuft mit"
+
+#: templates/mkadmin/quickdraft.html:8
+msgid "Title"
+msgstr "Titel"
+
+#: templates/mkadmin/quickdraft.html:12
+msgid "Content"
+msgstr "Inhalt"
+
+#: templates/mkadmin/quickdraft.html:20
+msgid "Save draft"
+msgstr "Entwurf sichern"
+
+#: templates/mkadmin/recentactions.html:4
+msgid "My Actions"
+msgstr "Meine Aktionen"
+
+#: templates/mkadmin/recentactions.html:8
+msgid "None available"
+msgstr "Keine verfügbar"
+
+#: templates/mkadmin/recentactions.html:22
+msgid "Unknown content"
+msgstr ""
