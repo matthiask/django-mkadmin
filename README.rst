@@ -4,6 +4,23 @@ Django-mkadmin
 Modifies the stock Django-Administration interface to fit my ideas a little
 bit better.
 
+This app requires the ``django.core.context_processors.request`` context
+processor.
+
+Add ``mkadmin`` to ``INSTALLED_APPS``.
+
+Add an entry to your URLconf::
+
+    from django.contrib import admin
+    from mkadmin.dashboard import dashboard
+
+    admin.autodiscover()
+
+    urlpatterns = patterns(
+        '',
+        url(r'^admin/mkadmin/', include(dashboard.urls)),
+        url(r'^admin/' include(admin.site.urls)),
+    )
 
 Configuration of the Create menu::
 
