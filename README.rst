@@ -4,13 +4,21 @@ Django-mkadmin
 Modifies the stock Django-Administration interface to fit my ideas a little
 bit better.
 
-This app requires the ``django.core.context_processors.request`` context
-processor.
+Add ``django-mkadmin`` to your requirements file. Currently there is no release,
+therefore you can add the following line to install the latest version::
 
-Add ``mkadmin`` to ``INSTALLED_APPS``.
+    -e git+git://github.com/matthiask/django-mkadmin.git#egg=mkadmin-dev
+
+Add ``mkadmin`` to ``INSTALLED_APPS``. The entry has to be before
+``django.contrib.admin`` because ``mkadmin`` overrides ``admin/base_site.html``
+and ``admin/index.html``.
+
+Add ``django.core.context_processors.request`` to
+``TEMPLATE_CONTEXT_PROCESSORS``.
 
 Add an entry to your URLconf::
 
+    from django.conf.urls import patterns, url, include
     from django.contrib import admin
     from mkadmin.dashboard import dashboard
 
